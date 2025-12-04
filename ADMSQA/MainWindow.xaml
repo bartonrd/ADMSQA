@@ -5,8 +5,84 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ADMSQA"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="ADMSQA - Test Runner" Height="600" Width="900">
     <Grid>
+        <TabControl>
+            <!-- Display Point Duplicates Tab -->
+            <TabItem Header="Display Point Duplicates">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
+                    <!-- Report Output Path Section -->
+                    <GroupBox Grid.Row="0" Header="Report Output Path" Margin="0,0,0,10">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox x:Name="ReportOutputPathTextBox" Grid.Column="0" Margin="0,0,5,0" VerticalContentAlignment="Center"/>
+                            <Button x:Name="BrowseReportOutputButton" Grid.Column="1" Content="Browse..." Width="80" Click="BrowseReportOutputButton_Click"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <!-- Input Directories Section -->
+                    <GroupBox Grid.Row="1" Header="Input Directories (containing .pts files)" Margin="0,0,0,10">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Top">
+                                <Button x:Name="AddDirectoryButton" Content="Add Directory" Width="100" Margin="5,0,0,5" Click="AddDirectoryButton_Click"/>
+                                <Button x:Name="RemoveDirectoryButton" Content="Remove Selected" Width="100" Margin="5,0,0,0" Click="RemoveDirectoryButton_Click"/>
+                            </StackPanel>
+                        </Grid>
+                    </GroupBox>
+
+                    <!-- List of Input Directories -->
+                    <GroupBox Grid.Row="2" Header="Selected Input Directories">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <ItemsControl x:Name="InputDirectoriesItemsControl">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Margin="5">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBox Text="{Binding Path, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="0" Margin="0,0,5,0" VerticalContentAlignment="Center"/>
+                                            <Button Content="Browse..." Grid.Column="1" Width="70" Margin="0,0,5,0" Click="BrowseInputDirectoryButton_Click" Tag="{Binding}"/>
+                                            <Button Content="X" Grid.Column="2" Width="25" Click="RemoveInputDirectoryButton_Click" Tag="{Binding}" ToolTip="Remove this directory"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </GroupBox>
+
+                    <!-- Results Section -->
+                    <GroupBox Grid.Row="3" Header="Test Results" Margin="0,10,0,10">
+                        <TextBox x:Name="ResultsTextBox" Height="150" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+                    </GroupBox>
+
+                    <!-- Run Test Button -->
+                    <Button x:Name="RunTestButton" Grid.Row="4" Content="Run Test" Height="40" FontSize="14" FontWeight="Bold" Click="RunTestButton_Click"/>
+                </Grid>
+            </TabItem>
+
+            <!-- Settings Tab -->
+            <TabItem Header="Settings">
+                <Grid Margin="10">
+                    <TextBlock Text="Settings - Coming Soon" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="Gray"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
