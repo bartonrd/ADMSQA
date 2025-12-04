@@ -1,0 +1,25 @@
+================================================================================
+DUPLICATES WITHIN EACH FILE REPORT
+================================================================================
+Total files analyzed: 1238
+Files with internal duplicates: 1
+Duplicate Key: Column1 + Column2 + Column5
+================================================================================
+
+--------------------------------------------------------------------------------
+FILE: disp03_S1212.S.pts
+Number of duplicate combinations: 4
+--------------------------------------------------------------------------------
+  Column1: 3, Column2: 26031, Column5: 34013184
+    Appears on lines: 355, 356
+    Occurrence count: 2
+  Column1: 3, Column2: 26032, Column5: 34013184
+    Appears on lines: 357, 358
+    Occurrence count: 2
+  Column1: 3, Column2: 26047, Column5: 34013184
+    Appears on lines: 359, 360
+    Occurrence count: 2
+  Column1: 3, Column2: 26048, Column5: 34013184
+    Appears on lines: 361, 362
+    Occurrence count: 2
+

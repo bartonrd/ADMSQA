@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ADMSQA/1.0.0": {
+        "dependencies": {
+          "DisplayPointDuplicateTest": "1.0.0"
+        },
+        "runtime": {
+          "ADMSQA.dll": {}
+        }
+      },
+      "DisplayPointDuplicateTest/1.0.0": {
+        "runtime": {
+          "DisplayPointDuplicateTest.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ADMSQA/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DisplayPointDuplicateTest/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
